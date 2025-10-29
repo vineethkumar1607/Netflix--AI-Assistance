@@ -1,5 +1,6 @@
 # Netflix - AI Assistance
 A React-based Netflix clone with AI features, built with Vite and Tailwind CSS.
+Live link: https://ai-assistance-projectx.netlify.app/
 
 
 - created  react app using react vite
