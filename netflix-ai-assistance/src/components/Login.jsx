@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, } from "react";
 import { validationSchema } from "../utils/validationSchema";
 import { firebaseErrorMessages } from "../utils/firebaseErrorMessages";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -156,7 +156,8 @@ const Login = () => {
 
           <button
             type="submit"
-            className="bg-red-600 hover:bg-red-700 p-3 rounded font-semibold disabled:opacity-50"
+            className="bg-red-600 hover:bg-red-700 h-12 px-3 rounded font-semibold disabled:opacity-50 
+             flex items-center justify-center w-full"
             disabled={isLoading}
           >
             {isLoading ? (<NetflixSpinner />) : (
@@ -190,7 +191,7 @@ const Login = () => {
           </div>
 
           <p className="text-xs text-gray-500 mt-2">
-            This page is protected by Google reCAPTCHA to ensure you're not a bot.
+            This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot.
           </p>
         </form>
       </div>
