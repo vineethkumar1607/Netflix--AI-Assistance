@@ -27,6 +27,7 @@ A React-based Netflix clone with AI features, built with Vite and Tailwind CSS.
 ### **Header**  
   - **Navigation links**  
   - **Responsive profile dropdown** (conditionally rendered based on auth state)  
+  - **Integrated AI Search Button** to toggle the recommendation modal.
 
 ### **Browse Page**  
 #### **Main Container Component**  
@@ -35,7 +36,14 @@ A React-based Netflix clone with AI features, built with Vite and Tailwind CSS.
   - **Interactive buttons** (Play, More Info)  
 - **Video Background Component**:  
   - **Embedded trailer** via custom hook (**`useMovieTrailer`**)  
-  - **Dynamic background** based on current featured movie  
+  - **Dynamic background** based on current featured movie 
+
+  - **AI Assistant Modal Component:**
+      - Modal Overlay for focused interaction.
+      - Input form to take natural language movie queries (e.g., "Sci-fi movies like Interstellar").
+      - Loading Spinner for visual feedback during API calls.
+      - Displays fetched MovieCard components in a horizontal, scrollable list.
+   
 
 #### **Secondary Container Component**  
 - **Movierows** by category (Now Playing, Popular, etc.)  //// NEED TO ADD MORE
@@ -46,6 +54,8 @@ A React-based Netflix clone with AI features, built with Vite and Tailwind CSS.
   - **`useMovieTrailer`** - Handles trailer video data  
   - **`useTopRatedMovies`** - Fetches and stores Top Rated movies  
   - **`usePopularMovies`** - Fetches and stores Popular movies  
+  - **useAiMovieSearch** - Manages the complex multi-step process of AI text generation followed by parallel TMDb data fetching.
+
 - **Redux Implementation**:  
   - **`userSlice`** - Manages authentication state  
   - **`moviesSlice`** - Stores TMDB API data  of nowPlayingMovies, topratedMovies, popularMovies, Movie trailer
@@ -56,7 +66,17 @@ A React-based Netflix clone with AI features, built with Vite and Tailwind CSS.
 - **Optimized data fetching** to minimize unnecessary calls  
 
 
+## **AI Integration** 
+**Gemini API Setup: Initialized the GoogleGenAI client for secure communication**
 
+      - Custom Hook (useAiMovieSearch): Separated AI search logic from the UI component for modularity:
+      - Handles state for loading, input, error, and recommendations.
+      - Step 1 (AI Generation): Calls the Gemini API with a strict prompt to generate 5 comma-separated movie titles based on the - user's query.
+
+      - Step 2 (Data Fetching): Uses the generated titles to concurrently fetch detailed movie data and posters from the TMDb API.- Error & Loading Handling: Manages all potential API failures and loading states.
+
+
+##  Features
         - created header
         - routing setup
         - created login and signup form
@@ -81,7 +101,7 @@ A React-based Netflix clone with AI features, built with Vite and Tailwind CSS.
         - created custom hook fo rfetching the data of trailer video and used in back video component uisng embed i frame
         
 
-##  Features
+
 
 ### Authentication
 - **Login/Signup Page**
