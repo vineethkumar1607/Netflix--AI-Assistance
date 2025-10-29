@@ -1,5 +1,5 @@
-import React from 'react'
-import VideoTitle from './Videotitle'
+
+import VideoTitle from './VideoTitle'
 import BackgroundVideo from './BackgroundVideo';
 import { useSelector } from 'react-redux';
 
