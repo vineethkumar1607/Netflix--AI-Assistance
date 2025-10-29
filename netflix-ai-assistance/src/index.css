@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+/* Complete scrollbar hiding solution */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  
+  /* Padding to compensate for hidden scrollbar */
+  scroll-padding: 0 1.5rem;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Optional: Better scrolling behavior */
+.movie-row {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
