@@ -1,9 +1,10 @@
-import { Play, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { IoIosPlay } from "react-icons/io";
+import PropTypes from 'prop-types';
 
 const VideoTitle = ({ title, overview }) => {
     return (
-        <div className='absolute w-screen aspect-video z-20 pt-[20%] px-20 bg-gradient-to-r from-black/60'>
+        <div className='absolute w-screen aspect-video z-20 pt-[10%] px-20 bg-gradient-to-r from-black/60'>
             <h1 className='text-5xl font-bold text-white mb-4 drop-shadow-xl'>{title}</h1>
             <p className='w-1/3 text-lg text-white mb-8 drop-shadow-md'>{overview}</p>
             <div className='flex space-x-4'>
@@ -21,5 +22,11 @@ const VideoTitle = ({ title, overview }) => {
         </div>
     )
 }
+
+VideoTitle.propTypes = {
+
+    title: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+};
 
 export default VideoTitle
